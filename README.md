@@ -28,21 +28,41 @@
 1. Acesse **EFS** e clique em **Create file systems**.
 2. Defina o nome como `EFS-PROJETO` e escolha a VPC criada previamente.
 3. Click em `Customize`.
- - Number of public subnets: 2
- - Number of private subnets: 2
-
+ - File system type: Regional
+ - Transition into Infrequent Access (IA): None
+ - Transition into Archive: None
+ - Throughput mode: Bursting
+ - Security groups: SG-EFS
 
 ## 4. Criação do RDS
-
-1. Acesse **RDS** e clique em **Criar banco de dados**.
-2. Escolha o motor (MySQL/PostgreSQL) e configure:
-   - Nome da instância: `rds-projeto`
+1. Click em **Subnet groups** e depois em **Create DB subnet group**.
+     - Name: DB_Subnet_Group.
+     - VPC: Selecione a VPC criada previamente.
+     - Availability Zones: us-east-1a e us-east-1b.
+     - Subnets: selecione todas as subnets.
+       
+3. Ainda no **RDS** clique em databases e **Create database**.
+   - Choose a database creation method: Standard create
+   - Engine options: MySQL
+   - Templates: Free tier
+   - Availability and durability: Single-AZ DB instance deployment (1 instance)
+   - DB instance identifier: (nome da instancia)
+   - Master username: (nome do usuario master)
+   - Credentials management: Self managed
+   - Master password: (senha do usuario master)
    - Tipo: `db.t3.micro`
+   - Storage type: General Purpose SSD (gp3)
    - Armazenamento: 20GB SSD
+   - Connectivity: Don’t connect to an EC2 compute resource
    - Conectividade: VPC criada anteriormente
-   - Security Group: `SG-RDS`
-3. Finalize a criação e anote o endpoint do banco.
-
+   - DB subnet group: selecione o DB subnet group criado previamente
+   - Public access: No
+   - VPC security group (firewall): Choose existing
+   - Existing VPC security groups: SG-EC2
+   - Database authentication: Password authentication
+   - Monitoring: Database Insights - Standard
+   - Initial database name: db_wordpress
+  
 
 ## 5. Criação da Instância EC2
 
