@@ -1,17 +1,19 @@
 # Configuração de Infraestrutura AWS
-
-Este documento descreve os passos para a criação e configuração da infraestrutura AWS utilizando VPC, Security Groups, RDS, EFS e instâncias EC2.
-
 ## 1. Criação da VPC
 
 1. Acesse o console da AWS e navegue até o serviço **VPC**.
 2. Clique em **Criar VPC** e defina:
-   - Nome: `vpc-projeto`
+   - Click em `VPC and more` para ter uma vpc pré configurada.
+   - Nome: `Projeto`
    - IPv4 CIDR Block: `10.0.0.0/16`
    - IPv6 CIDR Block: **Desativado** (ou conforme necessidade)
-3. Crie sub-redes públicas e privadas conforme necessário.
-4. Configure a **Internet Gateway** e associe-o à VPC.
-5. Configure as tabelas de roteamento para permitir tráfego adequado.
+   - Tenancy : Default
+   - Number of Availability Zones (AZs): 2
+   - Number of public subnets: 2
+   - Number of private subnets: 2
+   - NAT gateways ($) : none
+   - VPC endpoints: S3 Gateway
+   - DNS options: Check enable DNS hostnames and enable DNS resolution
 
 ## 2. Criação e Configuração dos Security Groups (SG)
 
