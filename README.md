@@ -17,11 +17,11 @@
 
 ## 2. Criação e Configuração dos Security Groups (SG)
 
-1. No console da AWS, acesse **Security Groups**.
+1. No console da AWS, navegue até o serviço de EC2 e acesse **Security Groups**.
 2. Crie os seguintes Security Groups:
-   - **SG-EC2**: Permitir tráfego SSH (22), HTTP (80) e HTTPS (443).
-   - **SG-RDS**: Permitir conexão na porta 3306 (MySQL) ou 5432 (PostgreSQL) apenas da EC2.
-   - **SG-EFS**: Permitir conexão na porta 2049 (NFS) para a EC2.
+   - **SG-EC2**: Permitir tráfego de entrada SSH (22), HTTP (80) e HTTPS (443).
+   - **SG-EFS**: Permitir tráfego de entrada 2049 (NFS) para o SG-EC2.
+   - **SG-RDS**: Permitir tráfego de entrada 3306 (MySQL) apenas do SG-EC2.
 
 ## 3. Criação do RDS
 
