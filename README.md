@@ -15,7 +15,7 @@
    - VPC endpoints: S3 Gateway
    - DNS options: Check enable DNS hostnames and enable DNS resolution
 
-## 2. Criação e Configuração dos Security Groups (SG)
+## 2. Criação e Configuração dos Security Groups (SGs)
 
 1. No console da AWS, navegue até o serviço de EC2 e acesse **Security Groups**.
 2. Crie os seguintes Security Groups:
