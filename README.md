@@ -155,4 +155,5 @@
       # Inicia os containers em segundo plano
       docker-compose up -d
       ```
-      3. Conecte-se à instância via SSH e teste a aplicação.
+      
+3. Conecte-se à instância via SSH e teste a aplicação.
