@@ -23,7 +23,16 @@
    - **SG-EFS**: Permitir tráfego de entrada 2049 (NFS) para o SG-EC2.
    - **SG-RDS**: Permitir tráfego de entrada 3306 (MySQL) apenas do SG-EC2.
 
-## 3. Criação do RDS
+## 3. Criação do EFS
+
+1. Acesse **EFS** e clique em **Create file systems**.
+2. Defina o nome como `EFS-PROJETO` e escolha a VPC criada previamente.
+3. Click em `Customize`.
+ - Number of public subnets: 2
+ - Number of private subnets: 2
+
+
+## 4. Criação do RDS
 
 1. Acesse **RDS** e clique em **Criar banco de dados**.
 2. Escolha o motor (MySQL/PostgreSQL) e configure:
@@ -34,12 +43,6 @@
    - Security Group: `SG-RDS`
 3. Finalize a criação e anote o endpoint do banco.
 
-## 4. Criação do EFS
-
-1. Acesse **EFS** e clique em **Criar sistema de arquivos**.
-2. Defina o nome como `efs-projeto` e escolha a VPC configurada.
-3. Configure as regras de Security Group para permitir acesso da EC2.
-4. Finalize a criação e anote o ID do sistema de arquivos.
 
 ## 5. Criação da Instância EC2
 
