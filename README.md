@@ -58,7 +58,7 @@
    - DB subnet group: selecione o DB subnet group criado previamente
    - Public access: No
    - VPC security group (firewall): Choose existing
-   - Existing VPC security groups: SG-EC2
+   - Existing VPC security groups: SG-RDS
    - Database authentication: Password authentication
    - Monitoring: Database Insights - Standard
    - Initial database name: nomeDB
