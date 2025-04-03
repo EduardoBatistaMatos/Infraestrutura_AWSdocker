@@ -1,6 +1,32 @@
-# Configuração de Infraestrutura AWS
+<h1 align="center">Projeto de Infraestrutura AWS + Docker </h1>
 
-## 1. Criação da VPC
+![VPC](https://github.com/user-attachments/assets/7ea9fb60-43ec-4d65-8f88-2ac7b950155b)_______________________
+![RDS](https://github.com/user-attachments/assets/22c536cf-008a-45b8-b63e-c321aca545d5)______________________
+![EFS](https://github.com/user-attachments/assets/1819f579-8584-49b3-b31b-f025d8176131)______________________
+![EC2](https://github.com/user-attachments/assets/7fba773b-e11a-41c2-9141-345a681db2c5)______________________
+![CloudWatch](https://github.com/user-attachments/assets/79140798-a6ae-402e-bb8f-32f4e26320dd)
+
+
+## 🛠 Tecnologias Utilizadas
+1. **VPC** – Configuração de rede isolada para os recursos da AWS.  
+2. **RDS** – Banco de dados gerenciado para maior confiabilidade e desempenho.  
+3. **EFS** – Sistema de arquivos elástico para compartilhamento entre instâncias.  
+4. **EC2** – Instâncias de computação para hospedagem do ambiente.  
+5. **Auto Scaling** – Ajuste automático da capacidade com base na demanda.  
+6. **Load Balancer** – Distribuição de tráfego para melhorar disponibilidade.  
+7. **CloudWatch** – Monitoramento e alertas para métricas do ambiente.  
+8. **Docker** – Contêineres para facilitar a portabilidade e gerenciamento.  
+9. **Bash** – Scripts de automação para configuração e manutenção.
+
+ ### 🚀 Benefícios da Arquitetura  
+
+✅ **Alta disponibilidade**: A aplicação continua operando mesmo se uma zona de disponibilidade falhar.  
+✅ **Escalabilidade automática**: O Auto Scaling ajusta os recursos conforme o tráfego de usuários.  
+✅ **Desempenho otimizado**: O Load Balancer distribui o tráfego de forma eficiente.  
+✅ **Gestão simplificada**: O RDS reduz a complexidade do gerenciamento do banco de dados.
+
+
+ ## 1. Criaçãop da VPC  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ![VPC](https://github.com/user-attachments/assets/7ea9fb60-43ec-4d65-8f88-2ac7b950155b) 
 
 1. Acesse o console da AWS e navegue até o serviço **VPC**.
 2. Clique em **Criar VPC** e defina:  
@@ -26,9 +52,10 @@
    - **SG-EFS**: Permitir tráfego de entrada 2049 (NFS) para o SG-EC2.
    - **SG-RDS**: Permitir tráfego de entrada 3306 (MySQL) apenas do SG-EC2.
 
-## 3. Criação do EFS
+## 3. Criação do EFS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![EFS](https://github.com/user-attachments/assets/1819f579-8584-49b3-b31b-f025d8176131)
 
 1. Acesse **EFS** e clique em **Create file systems**.
+
 2. Defina o nome como `EFS-PROJETO` e escolha a VPC criada previamente.
 3. Click em `Customize`.
  - File system type: Regional
@@ -38,7 +65,7 @@
  - Subnet ID: Selecione as subnets publicas.
  - Security groups: SG-EFS
 
-## 4. Criação do RDS
+## 4. Criação do RDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![RDS](https://github.com/user-attachments/assets/22c536cf-008a-45b8-b63e-c321aca545d5)
 1. Click em **Subnet groups** e depois em **Create DB subnet group**.
      - Name: DB_Subnet_Group.
      - VPC: Selecione a VPC criada previamente.
@@ -67,7 +94,7 @@
    - Monitoring: Database Insights - Standard
    - Initial database name: nomeDB
 
-## 5. Criação da Instância EC2
+## 5. Criação da Instância EC2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![EC2](https://github.com/user-attachments/assets/7fba773b-e11a-41c2-9141-345a681db2c5)
 
 1. Acesse **EC2** e clique em **Launch instances**.
 2. Escolha:
@@ -236,9 +263,9 @@
      - **Additional Capacity Settings**: `Default`  
      - **Additional Settings**: `Check Enable Group Metrics Collection within CloudWatch`  
 
----
 
-## 8. Criando um Alarme no **CloudWatch** para Notificações via E-mail  
+## 8. Criando um Alarme no **CloudWatch** para Notificações via E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![CloudWatch](https://github.com/user-attachments/assets/79140798-a6ae-402e-bb8f-32f4e26320dd)
+
 
 1. Acesse **CloudWatch** e clique em **Alarms**.  
 2. Clique em **Create Alarm**.  
@@ -263,13 +290,15 @@
 
 ## 9. Testando a Aplicação  
 
-1. Acesse **Load Balancer** e copie o **DNS Name**.  
+1. Acesse o **Load Balancer** e copie o **DNS Name**.  
 2. Cole o **DNS** no navegador e verifique se a página do **WordPress** está acessível.  
 
 ### **Verificando o Funcionamento do Auto Scaling**  
 
 1. Delete uma instância e veja outra sendo criada automaticamente.  
-2. Teste via terminal Linux das instâncias:  
+2. Teste utilizando a CPU em excesso.
+   via terminal Linux das instâncias:
+
    - Instale o **stress-ng**:  
      ```bash
      sudo yum install stress-ng -y
@@ -278,4 +307,7 @@
      ```bash
      stress-ng --cpu 4 --cpu-load 100 --timeout 600s --temp-path /tmp
      ```  
-3. Esse teste gerará uma notificação por e-mail para `<seuemail@seuemail.com>` e o **Auto Scaling** criará novas instâncias automaticamente.  
+4. Esse teste gerará uma notificação por e-mail para `<seuemail@seuemail.com>` e o **Auto Scaling** criará novas instâncias automaticamente.
+   ![Email](https://github.com/user-attachments/assets/bae06513-be74-4d29-9960-df84b0af6e00)
+
+   ![Aumentando numero de instancias 3](https://github.com/user-attachments/assets/2558196f-09dc-4f5a-83fa-c21f5106d8bb)  
