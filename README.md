@@ -48,7 +48,7 @@
 1. No console da AWS, navegue até o serviço de EC2 e acesse **Security Groups**.
 2. Crie os seguintes Security Groups:
    - **SG-EC2**: Permitir tráfego de entrada HTTP (80) para o SG-CLB.
-   - **SG-CLB**: Permitir trafego de entreda HTTP (80) para o My IP e trafego de saida HTTP (80) para o SG-EC2
+   - **SG-CLB**: Permitir trafego de entreda HTTP (80) para toddos 0.0.0.0 e trafego de saida HTTP (80) para o SG-EC2
    - **SG-EFS**: Permitir tráfego de entrada 2049 (NFS) para o SG-EC2.
    - **SG-RDS**: Permitir tráfego de entrada 3306 (MySQL) apenas do SG-EC2.
 
