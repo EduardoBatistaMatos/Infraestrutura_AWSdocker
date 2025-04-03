@@ -38,7 +38,7 @@
    - **Number of Availability Zones (AZs)**: `2`  
    - **Number of Public Subnets**: `2`  
    - **Number of Private Subnets**: `2`  
-   - **NAT Gateways ($)**: `None`  
+   - **NAT Gateways ($)**: `1 NAT Gateway `  
    - **VPC Endpoints**: `S3 Gateway`  
    - **DNS Options**: `Check Enable DNS Hostnames` e `Enable DNS Resolution`  
 
