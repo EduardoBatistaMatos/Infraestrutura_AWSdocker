@@ -187,8 +187,6 @@
       docker-compose up -d
       ```
       
-3. Conecte-se à instância via SSH e teste a aplicação.
-
 
 ## 6. Criação do **CLB (Classic Load Balancer)**  
 
@@ -290,8 +288,16 @@
 
 ## 9. Testando a Aplicação  
 
-1. Acesse o **Load Balancer** e copie o **DNS Name**.  
-2. Cole o **DNS** no navegador e verifique se a página do **WordPress** está acessível.  
+1. Acesse o **Load Balancer**, copie o **DNS Name** e cole no navegador.
+2. Faça login e entre no wordpress, acessando a primeira vez tera uma tela de boas-vindas.
+   
+![Captura de tela 2025-04-03 174137](https://github.com/user-attachments/assets/0b16edeb-84b4-4c0e-8da7-3a8c518142cc)
+
+3. Faça um pequeno post, exclua a pagina do navegador e cole novamente o DNS Name do CLB que deverara retornar o post criado:
+
+![Captura de tela 2025-04-03 174758](https://github.com/user-attachments/assets/1fadada6-c748-4fb4-8db2-1b937d0e3440)
+
+
 
 ### **Verificando o Funcionamento do Auto Scaling**  
 
