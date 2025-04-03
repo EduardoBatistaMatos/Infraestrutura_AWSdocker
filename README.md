@@ -144,7 +144,7 @@
       sudo mkdir -p /projeto
       
       # Cria o diretório onde o EFS será montado
-      mkdir /efs
+      sudo mkdir /efs
       
       # Instala o cliente do Amazon EFS
       sudo yum install -y amazon-efs-utils
