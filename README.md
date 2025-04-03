@@ -239,7 +239,7 @@
    - **Launch Template**: Selecione o **Launch Template** criado previamente.  
    - **Version**: `Default`  
    - **VPC**: Selecione a **VPC** criada anteriormente.  
-   - **Availability Zones and Subnets**: Selecione as duas zonas públicas.  
+   - **Availability Zones and Subnets**: Selecione as subnets privadas.  
    - **Availability Zone Distribution**: `Balanced best effort`  
    - **Load Balancing**: `Attach to an existing load balancer`  
    - **Attach to an existing Load Balancer**:  
