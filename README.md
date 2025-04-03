@@ -26,7 +26,7 @@
 ✅ **Gestão simplificada**: O RDS reduz a complexidade do gerenciamento do banco de dados.
 
 
- ## 1. Criaçãop da VPC  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![VPC](https://github.com/user-attachments/assets/7ea9fb60-43ec-4d65-8f88-2ac7b950155b) 
+ ## 1. Criação da VPC  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![VPC](https://github.com/user-attachments/assets/7ea9fb60-43ec-4d65-8f88-2ac7b950155b) 
 
 1. Acesse o console da AWS e navegue até o serviço **VPC**.
 2. Clique em **Criar VPC** e defina:  
@@ -296,8 +296,8 @@
 ### **Verificando o Funcionamento do Auto Scaling**  
 
 1. Delete uma instância e veja outra sendo criada automaticamente.  
-2. Teste utilizando a CPU em excesso.
-   via terminal Linux das instâncias:
+2. Teste utilizando a CPU em excesso através do ``strees``.
+   No terminal Linux das instâncias siga esses comandos:
 
    - Instale o **stress-ng**:  
      ```bash
