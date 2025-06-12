@@ -1,10 +1,13 @@
-# Projeto de Infraestrutura AWS + Docker 
+# Arquitetura de Solução com AWS
 
 ![VPC](https://github.com/user-attachments/assets/7ea9fb60-43ec-4d65-8f88-2ac7b950155b)________________
 ![RDS](https://github.com/user-attachments/assets/22c536cf-008a-45b8-b63e-c321aca545d5)________________
 ![EFS](https://github.com/user-attachments/assets/1819f579-8584-49b3-b31b-f025d8176131)________________
 ![EC2](https://github.com/user-attachments/assets/7fba773b-e11a-41c2-9141-345a681db2c5)________________
 ![CloudWatch](https://github.com/user-attachments/assets/79140798-a6ae-402e-bb8f-32f4e26320dd)
+
+![image](https://github.com/user-attachments/assets/aee19198-fe96-442d-bd21-89a525591b8f)
+
 
 
 ## 🛠 Tecnologias Utilizadas
