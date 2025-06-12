@@ -1,4 +1,4 @@
-# Arquitetura de Solução com AWS
+# Arquitetura de Solução: AWS + Docker
 
 ![VPC](https://github.com/user-attachments/assets/7ea9fb60-43ec-4d65-8f88-2ac7b950155b)________________
 ![RDS](https://github.com/user-attachments/assets/22c536cf-008a-45b8-b63e-c321aca545d5)________________
